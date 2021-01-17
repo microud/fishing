@@ -23,6 +23,9 @@ yarn add fishing-request
 
 ### Decorator
 
+所有的装饰器都有一个 `Fish` 前缀，主要是为了避免与一些框架基础库中的 `Get`、`Post` 等关键词的装饰器重复，如我在使用的 `NestJS`。
+如果觉得不会有冲突且多写前缀有些麻烦，建议在引入的时候重命名为 `Get` 等关键词。
+
 #### @FishPond()
 
 FishPond() 是一个属性装饰器，顾名思义，这是你即将使用的「鱼塘」，它用于指明类中的某个属性的值（string 类型）为整个类中请求的 Base URL。
@@ -103,5 +106,27 @@ class DemoRequest {
 - FishGet(config: AxiosRequestConfig)
 
 除此之外，使用装饰器定义参数等与 `FishRequest()` 完全一致。
+
+#### FishPost()
+
+`FishPost()` 是对 `FishRequest()` POST 方法的封装，使用方法与 `FishGet()` 完全一致。
+
+- FishPost(url: string, config: AxiosRequestConfig)
+- FishPost(config: AxiosRequestConfig)
+
+#### FishPut()
+
+`FishPut()` 是对 `FishRequest()` POST 方法的封装，使用方法与 `FishGet()` 完全一致。
+
+- FishPut(url: string, config: AxiosRequestConfig)
+- FishPut(config: AxiosRequestConfig)
+
+#### FishDelete()
+
+`FishDelete()` 是对 `FishRequest()` POST 方法的封装，使用方法与 `FishGet()` 完全一致。
+
+- FishDelete(url: string, config: AxiosRequestConfig)
+- FishDelete(config: AxiosRequestConfig)
+
 
 更多的使用用例，可以查看 `test/` 目录下的测试 Demo。
